@@ -16,8 +16,9 @@ class AddressValidator():
                 stream=False
             )
             print('\033[96m' + 'Connection accepted, welcome to the DeepSeek API!' + '\033[0m')
-        except:
-            print('\033[93m'+ "Failed to establish connection..." + '\033[0m')
+        except Exception as e:
+            print('\033[93m'+ "Failed to establish connection...")
+            print(e + '\033[0m' )
 
     def query(self, business, address, sugg_address):
         message = f"""
